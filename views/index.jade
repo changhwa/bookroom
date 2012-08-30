@@ -1,7 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	h1= title
+	p Welcome to #{title}
 
+	div.navbar.navbar-fixed-top
+		div.navbar-inner
+			div.container
+				a.btn.btn-navbar(data-toggle='collapse' ,  data-target='.nav-collapse')
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.brand(href='#')
+					| Project Name
 
