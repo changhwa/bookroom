@@ -3,7 +3,7 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href="/bootstrap/css/bootstrap.min.css")
+    link(rel='stylesheet', href="/bootstrap/css/bootstrap_white.css")
     link(rel='stylesheet', href="/bootstrap/css/bootstrap-responsive.min.css")
     link(rel='stylesheet', href='/bootstrap/css/style.css')
     script(src='/bootstrap/js/libs/bootstrap/bootstrap.min.js')
@@ -13,3 +13,29 @@ html
     script(src='http://code.jquery.com/ui/1.8.22/jquery-ui.min.js')
   body
     block content
+
+    div.navbar.navbar-fixed-top
+        div.navbar-inner
+            div.container(style="width: auto;")
+                a.btn.btn-navbar(data-toggle='collapse' ,  data-target='.nav-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar   
+                a.brand(href='#')
+                    |  BooksRoom
+                div.nav-collapse
+                    ul.nav
+                        li.active
+                            a(href='#')
+                                | Home
+                        li
+                            a(href='#about')
+                                | About
+                        li
+                            a(href='#contact')
+                                | Contact
+                    ul.nav.pull-right
+                        li
+                            a(href="#login")
+                                | Login
+    
