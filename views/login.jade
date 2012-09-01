@@ -1,7 +1,9 @@
 
 block contents
 
-	div#loginForm
+	div#loginForm(style='display: none;')
 		form(method='post', action='/login')
 			div#usrId:  input(type="text", name="id", required, placeholder="ID")
 			div#usrPw:  input(type="password", name="pw", required, placeholder="PASSWORD")
+			div#submitBtn: input.btn(type="submit") Go
+

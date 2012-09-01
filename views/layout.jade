@@ -13,8 +13,8 @@ html
     script(src='http://code.jquery.com/ui/1.8.22/jquery-ui.min.js')
   body
     block content
-
     div.navbar.navbar-fixed-top
+        div.backOut(style="display: none; background-color: gray;")
         div.navbar-inner
             div.container(style="width: auto;")
                 a.btn.btn-navbar(data-toggle='collapse' ,  data-target='.nav-collapse')
@@ -36,6 +36,5 @@ html
                                 | Contact
                     ul.nav.pull-right
                         li
-                            a(href="#login")
+                            a(href="#login",onclick="showLogin();w")
                                 | Login
-    

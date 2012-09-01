@@ -5,12 +5,22 @@ block content
 	h1= title
 	p Welcome to #{title}
 
-	div#loginForm
-		form(method='post', action='/login')
-			div#usrId:  input(type="text", name="id", required, placeholder="ID")
-			div#usrPw:  input(type="password", name="pw", required, placeholder="PASSWORD")
-			div#submitBtn: input.btn(type="submit" ) Go
+	include login
 
+	script(type='text/javascript')
+		function showLogin(){
+			$('.backOut').width($(window).width());
+			$('.backOut').height($(window).height());
+			$('.backOut').fadeTo(500,0.3);
+			$('#loginForm').hide();
+			var top  = ($(window).scrollTop() + ($(window).height()-$('#loginForm').height())/2);
+			var left = ($(window).scrollLeft() + ($(window).width()-$('#loginForm').width())/2);
+			$('#loginForm').css('top',top);
+			$('#loginForm').css('left',left);
+			$('#loginForm').css('z-index',50000);
+			$('#loginForm').css('position','absolute');
+			$('#loginForm').fadeIn(500);
+		}
 
 
 

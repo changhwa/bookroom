@@ -8,5 +8,7 @@ exports.index = function(req, res){
 };
 
 exports.login = function(req,res){
-	alert('Login');
+//	res.writeHead(200, { 'Content-Type' : 'text/html'});
+//	res.end('<h1> Test </h1>');
+	alert('Test');
 }
