@@ -2,10 +2,9 @@ extends layout
 
 block content
 
-	h1= title
-	p Welcome to #{title}
-
 	include login
+
+	block script
 
 	script(type='text/javascript')
 		function showLogin(){
@@ -20,7 +19,24 @@ block content
 			$('#loginForm').css('z-index',50000);
 			$('#loginForm').css('position','absolute');
 			$('#loginForm').fadeIn(500);
+			$('#id').focus();
 		}
+
+		$(document).keydown(function(event){
+			if(event.which=='27'){
+				$("#loginForm").fadeOut(300);
+				$(".backOut").fadeOut(500);
+			}
+
+		});
+
+		$(window).resize(function(){
+			$(".backOut").width($(window).width()).height($(window).height());
+			var top  = ($(window).scrollTop() + ($(window).height()-$('#loginForm').height())/2);
+			var left = ($(window).scrollLeft() + ($(window).width()-$('#loginForm').width())/2);
+			$('#loginForm').css('top',top);
+			$('#loginForm').css('left',left);
+		});
 
 
 
