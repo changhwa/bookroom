@@ -8,7 +8,6 @@ exports.index = function(req, res){
 };
 
 exports.login = function(req,res){
-//	res.writeHead(200, { 'Content-Type' : 'text/html'});
-//	res.end('<h1> Test </h1>');
-	alert('Test');
+	res.writeHead(200, { 'Content-Type' : 'text/html'});
+	res.end('<h1> Test </h1>');
 }
