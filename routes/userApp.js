@@ -13,10 +13,17 @@ exports.login = function(req,res){
 
 
 exports.register = function(req,res){
-	User.userAdd({
+	
+	return User.userAdd({
 		id : req.body.id,
 		pw : req.body.pw
+	}, function(err){
+		if(err === 'Success'){
+			res.render('index' , { message: 'Register Success..' })
+		}else{
+			res.render('index' , { message: 'Register Fail..' })
+		}
 	});
-	res.writeHead(200, { 'Content-Type' : 'text/html'});
-	res.end('<h1> Test </h1>');
+
+	res.redirect('/');
 }
