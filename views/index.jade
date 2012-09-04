@@ -4,6 +4,10 @@ block content
 
 	include login
 
+	if (typeof message != 'undefined')
+		script
+			alert(#{message});
+
 	block script
 
 	script(type='text/javascript')
