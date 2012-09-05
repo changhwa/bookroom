@@ -5,8 +5,10 @@ block content
 	include login
 
 	if (typeof message != 'undefined')
-		script
-			alert(#{message});
+		div.alert.alert-success
+			a.close x
+			strong Test
+			p #{message}
 
 	block script
 
