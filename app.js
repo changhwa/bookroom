@@ -21,6 +21,13 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.cookieParser());
   app.use(express.session({secret: 'booksroom'}));
+  
+  app.use(function(req, res, next) {
+    console.log('app.use session middle');
+    res.locals.userId= req.session.userId;
+    console.log(res.locals.userId);
+    next();
+  });
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
