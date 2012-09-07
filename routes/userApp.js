@@ -9,13 +9,13 @@ exports.login = function(req,res){
 		pw : req.body.pw
 	}, function (id, msg){
 		if(msg){
-			req.session.regenerate(function(){
-				req.session.userId = id;  
-				console.log(req.session.userId);
- 			});
- 			res.render('index', {message: 'Login Success', user: id});
+			req.session.userId = id.id;  
+			res.header('Referrer');
+ 			res.redirect('/');
+ 			//res.render('index', {message: 'Login Success'});
 		} else{
-			res.render('index', {message: 'Login Fail', user: 'undefined'});
+			//res.render('index', {message: 'Login Fail', user: 'undefined'});
+			res.render('index', {message: 'Login Fail'});
 		}
 	});
 }
@@ -25,7 +25,7 @@ exports.logout = function(req, res){
 	if(req.session.userId !== 'undefined' || req.session.userId !== '') {
 		delete req.session.userId;
 	}
-	
+
 	res.redirect('/');
 }
 

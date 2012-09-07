@@ -34,7 +34,7 @@ html
                             a(href='#contact')
                                 | Contact
                     ul.nav.pull-right
-                        if (typeof user == 'undefined')
+                        if (typeof userId == 'undefined')
                             li
                                 a(href="#login", id="showLogin")
                                     | Login
@@ -43,7 +43,7 @@ html
                                     | Register
                         else
                             li
-                                a(href="logout", id="")
+                                a(href="/logout")
                                     | Logout
                             li
                                 a(href="#register", id="showReg")
