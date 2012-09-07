@@ -13,13 +13,21 @@ exports.login = function(req,res){
 				req.session.userId = id;  
 				console.log(req.session.userId);
  			});
- 			res.render('index', {message: 'Login Success'});
+ 			res.render('index', {message: 'Login Success', user: id});
 		} else{
-			res.render('index', {message: 'Login Fail'});
+			res.render('index', {message: 'Login Fail', user: 'undefined'});
 		}
 	});
 }
 
+exports.logout = function(req, res){
+
+	if(req.session.userId !== 'undefined' || req.session.userId !== '') {
+		delete req.session.userId;
+	}
+	
+	res.redirect('/');
+}
 
 exports.register = function(req,res){
 	

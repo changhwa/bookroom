@@ -34,9 +34,17 @@ html
                             a(href='#contact')
                                 | Contact
                     ul.nav.pull-right
-                        li
-                            a(href="#login", id="showLogin")
-                                | Login
-                        li
-                            a(href="#register", id="showReg")
-                                | Register
+                        if (typeof user == 'undefined')
+                            li
+                                a(href="#login", id="showLogin")
+                                    | Login
+                            li
+                                a(href="#register", id="showReg")
+                                    | Register
+                        else
+                            li
+                                a(href="logout", id="")
+                                    | Logout
+                            li
+                                a(href="#register", id="showReg")
+                                    | Profile
