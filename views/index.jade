@@ -53,13 +53,13 @@ block content
 			$('#loginForm').css('left',left);
 		});
 
-		
+
 		$(function(){
-			$('#showLogin').click({
+			$('#showLogin').click(function(){
 				showLogin();
 				$('#userForm').attr('action','/login');
 			});
-			$('#showReg').click({
+			$('#showReg').click(function(){
 				showLogin();
 				$('#userForm').attr('action','/register');
 			});

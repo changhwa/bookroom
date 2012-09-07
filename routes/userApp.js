@@ -9,7 +9,7 @@ exports.login = function(req,res){
 		pw : req.body.pw
 	}, function (id, msg){
 		if(msg){
-			req.session.regenerate(function(err){
+			req.session.regenerate(function(){
 				req.session.userId = id;  
 				console.log(req.session.userId);
  			});
