@@ -14,17 +14,6 @@ block content
 
 	script(type='text/javascript')
 
-		$(document).ready(function(){
-			$('#showLogin').click({
-				showLogin();
-				$('#userForm').attr('action','/login');
-			});
-			$('#showReg').click({
-				showLogin();
-				$('#userForm').attr('action','/register');
-			});
-		});
-		
 		// var top;
 		// var left;
 		// 크롬에서 동작안함.. 와이???
@@ -64,7 +53,18 @@ block content
 			$('#loginForm').css('left',left);
 		});
 
-
+		
+		$(function(){
+			$('#showLogin').click({
+				showLogin();
+				$('#userForm').attr('action','/login');
+			});
+			$('#showReg').click({
+				showLogin();
+				$('#userForm').attr('action','/register');
+			});
+		});
+		
 
 	
 
