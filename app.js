@@ -7,7 +7,8 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , path = require('path')
-  , userRoutes = require('./routes/userApp');
+  , userRoutes = require('./routes/userApp')
+  , searchRoutes = require('./routes/searchApp');
 
 var app = express();
 
@@ -41,6 +42,10 @@ app.get('/', routes.index);
 app.post('/login', userRoutes.login);
 app.post('/register', userRoutes.register);
 app.get('/logout', userRoutes.logout);
+
+//search router
+app.all('/search',searchRoutes.main);
+app.get('/search/booklist', searchRoutes.bookSearchList);
 
 
 http.createServer(app).listen(app.get('port'), function(){
