@@ -1,9 +1,12 @@
-var validate = function (id){
-	function nullCheck(){
-		if(id === '' || id === 'undefined'){
+var validate = function (){
+	
+	/*var nullCheck = function(id){
+		if(id !== '' || id !== 'undefined'){
 			if( $("#"+id).val() === '' ){
+				alert('');
+				$("#"+id).focus();
 				return false;
 			}
 		}		
-	}
+	}*/
 }

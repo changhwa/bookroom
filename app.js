@@ -23,9 +23,8 @@ app.configure(function(){
   app.use(express.session({secret: 'booksroom'}));
   
   app.use(function(req, res, next) {
-    console.log('app.use session middle');
     res.locals.userId= req.session.userId;
-    console.log(res.locals.userId);
+    res.locals.message = req.session.message;
     next();
   });
   app.use(app.router);

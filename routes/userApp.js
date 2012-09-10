@@ -10,12 +10,14 @@ exports.login = function(req,res){
 	}, function (id, msg){
 		if(msg){
 			req.session.userId = id.id;  
+			req.session.message = 'Login Success';
 			res.header('Referrer');
  			res.redirect('/');
  			//res.render('index', {message: 'Login Success'});
 		} else{
-			//res.render('index', {message: 'Login Fail', user: 'undefined'});
-			res.render('index', {message: 'Login Fail'});
+			req.session.message = 'Login Fail';
+			res.header('Referrer');
+ 			res.redirect('/');
 		}
 	});
 }
@@ -24,6 +26,7 @@ exports.logout = function(req, res){
 
 	if(req.session.userId !== 'undefined' || req.session.userId !== '') {
 		delete req.session.userId;
+		delete req.session.message;
 	}
 
 	res.redirect('/');
