@@ -25,7 +25,7 @@ $(function() {
 				for (var i=0;i<itemSize;i++){
 					items.find("td:eq("+i+")").text($("#dragTable td:eq("+i+")").text());
 				}
-				$("#bookList").append(items);
+				$("#bookList table").append(items);
 			}
 		});
 /*
