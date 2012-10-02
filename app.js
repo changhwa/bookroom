@@ -23,9 +23,11 @@ app.configure(function(){
   app.use(express.cookieParser());
   app.use(express.session({secret: 'booksroom'}));
   
+  //session 
   app.use(function(req, res, next) {
     res.locals.userId= req.session.userId;
     res.locals.message = req.session.message;
+    res.locals.apiKey = req.session.apiKey;
     next();
   });
   app.use(app.router);

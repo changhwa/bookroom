@@ -21,7 +21,7 @@ $(function() {
 			tolerance: 'pointer',
 			drop: function(event,ui){
 				var items=$("#bookList table tbody tr:eq(0)").clone();
-				var itemSize=$("bookList table tbody tr td").length;
+				var itemSize=$("#bookList table tbody tr td").length;
 				for (var i=0;i<itemSize;i++){
 					items.find("td:eq("+i+")").text($("#dragTable td:eq("+i+")").text());
 				}
