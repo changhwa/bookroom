@@ -47,7 +47,7 @@ app.get('/logout', userRoutes.logout);
 
 //search router
 app.all('/search',searchRoutes.main);
-app.get('/search/booklist', searchRoutes.bookSearchList);
+app.all('/search/booklist', searchRoutes.bookSearchList);
 
 
 http.createServer(app).listen(app.get('port'), function(){

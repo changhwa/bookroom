@@ -3,7 +3,8 @@ Api = require('../lib/api').Api;
 
 exports.bookSearchList = function(req,res){
 	console.log('bookSearchList');
-
+	console.log(req.body);
+	console.log(req.session.apiKey);
 	return Api.api({
 		host : 'http://openapi.naver.com',
 		port : 80,

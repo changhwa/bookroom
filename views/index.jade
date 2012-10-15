@@ -42,6 +42,27 @@ block content
 			$('#id').focus();
 		}
 
+
+		function bookSearch(){
+			console.log('ajax start');
+			$.ajax({
+				type: "POST",
+				url:"/search/booklist",
+				dataType:"json",
+				data:"query="+$("#content").val()+"&display="+$("#display").val()+"&start="+$("#startPage").val()+"&target="+$("#target").val(),
+				success: function(msg){
+					alert('Ajax success');
+					console.log(msg);
+				},
+				fail: function(msg){
+					alert('Ajax fail');
+					console.log(msg);
+				}
+			});
+		}
+
+		
+
 		$(document).keydown(function(event){
 			if(event.which=='27'){
 				$("#loginForm").fadeOut(300);
@@ -71,4 +92,9 @@ block content
 			$('.close').click(function(){
 				$('.alert.alert-success').remove();
 			});
+			$('#bookSearch').click(function(){
+				console.log('click??');
+				bookSearch();
+			});
 		});
+
