@@ -8,6 +8,10 @@ exports.login = function(req,res){
 		id : req.body.id,
 		pw : req.body.pw
 	}, function (data, msg){
+		console.log('userApp.js');
+		console.log('msg');
+		console.log('data.id: ' +data.id);
+		console.log('data.apikey: ' +data.apiKey);
 		if(msg){
 			req.session.userId = data.id;  
 			req.session.message = 'Login Success';

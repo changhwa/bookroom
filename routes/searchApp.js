@@ -10,9 +10,9 @@ exports.bookSearchList = function(req,res){
 		port : 80,
 		path : '/search',
 		key : req.session.apiKey,
-		query: req.body.content,
+		query: req.body.query,
 		display: req.body.display,
-		start: req.body.startPage,
+		start: req.body.start,
 		target: req.body.target
 	});
 	res.redirect('/');

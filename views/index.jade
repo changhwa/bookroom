@@ -49,7 +49,7 @@ block content
 				type: "POST",
 				url:"/search/booklist",
 				dataType:"json",
-				data:"query="+$("#content").val()+"&display="+$("#display").val()+"&start="+$("#startPage").val()+"&target="+$("#target").val(),
+				data: "query="+$("#content").val()+"&display="+$("#display").val()+"&start="+$("#startPage").val()+"&target="+$("#target").val(),
 				success: function(msg){
 					alert('Ajax success');
 					console.log(msg);
